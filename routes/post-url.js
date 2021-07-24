@@ -10,6 +10,7 @@ const postUrl = (request, response) => {
       const shortUrl = shortid.generate();
       pool.query('INSERT INTO urls (longUrl, shortUrl) VALUES ($1, $2)', [longUrl, shortUrl], error => {
         if (error) {
+          console.log(error);
           throw error;
         }
         response.status(201).json(shortUrl);
