@@ -1,0 +1,33 @@
+{
+  "name": "url-shorterner-node-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix --ext .js .",
+    "format": "prettier --write '{,!(node_modules)/**/}*.{js,json}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngswbryan/url-shorterner-node-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngswbryan/url-shorterner-node-server/issues"
+  },
+  "homepage": "https://github.com/ngswbryan/url-shorterner-node-server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "short-id": "0.1.0-1",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-strongloop": "^2.1.0",
+    "eslint-plugin-import": "^2.23.4"
+  }
+}
