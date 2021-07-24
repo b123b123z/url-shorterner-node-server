@@ -2,9 +2,9 @@
   "name": "url-shorterner-node-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "prepare": "husky install",
     "lint": "eslint --fix --ext .js .",
     "format": "prettier --write '{,!(node_modules)/**/}*.{js,json}'"
