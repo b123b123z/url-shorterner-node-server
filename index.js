@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const validUrl = require('valid-url');
 const shortid = require('shortid');
 const { pool } = require('./config/config');
 
 const app = express();
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 const getUrl = (request, response) => {
