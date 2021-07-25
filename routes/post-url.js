@@ -10,12 +10,13 @@ const postUrl = (request, response) => {
   if (validUrl.isUri(longUrl)) {
     try {
       const shortUrl = shortid.generate();
-      pool.query('INSERT INTO urls (longUrl, shortUrl) VALUES ($1, $2)', [longUrl, shortUrl], error => {
+      const redirectUrl = `${baseUrl}/${shortUrl}`;
+      pool.query('INSERT INTO urls (longUrl, shortUrl) VALUES ($1, $2)', [longUrl, redirectUrl], error => {
         if (error) {
           console.log(error);
           throw error;
         }
-        response.status(201).json(`${baseUrl}/${shortUrl}`);
+        response.status(201).json(redirectUrl);
       });
     } catch (err) {
       response.status(500).json('Server Error');
