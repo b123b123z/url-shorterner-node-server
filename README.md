@@ -7,9 +7,7 @@ This project was done as part of my GovTech TAP application
 - Node.js (version 12.x, LTS)
 - PostgreSQL (version 12.x)
 
-## Deploying our app
-
-### We have deployed our app on a free dynos on Heroku over at https://mighty-mountain-99792.herokuapp.com/
+## Deploying the app
 
 Alternatively,
 
