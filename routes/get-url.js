@@ -2,9 +2,11 @@ const { pool } = require('../config/config');
 
 const getUrl = (request, response) => {
   const { shortUrl } = request.params;
+  const baseUrl = 'http://url-shorterner-server.herokuapp.com';
+  const redirectUrl = `${baseUrl}/${shortUrl}`;
 
   try {
-    pool.query('SELECT * FROM urls where shortUrl = $1', [shortUrl], (error, results) => {
+    pool.query('SELECT * FROM urls where shortUrl = $1', [redirectUrl], (error, results) => {
       if (error) {
         throw error;
       }
