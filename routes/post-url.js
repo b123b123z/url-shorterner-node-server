@@ -5,6 +5,8 @@ const { pool } = require('../config/config');
 const postUrl = (request, response) => {
   const { longUrl } = request.body;
 
+  const baseUrl = 'http://url-shorterner-server.herokuapp.com';
+
   if (validUrl.isUri(longUrl)) {
     try {
       const shortUrl = shortid.generate();
@@ -13,7 +15,7 @@ const postUrl = (request, response) => {
           console.log(error);
           throw error;
         }
-        response.status(201).json(shortUrl);
+        response.status(201).json(`${baseUrl}/${shortUrl}`);
       });
     } catch (err) {
       response.status(500).json('Server Error');
